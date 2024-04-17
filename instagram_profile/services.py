@@ -105,5 +105,5 @@ def download_image(url, name):
 def resize_image(base_name):
     full_name = os.path.join(settings.MEDIA_ROOT, 'instagram/', base_name)
     img = Image.open(full_name)
-    img.thumbnail((624, 800), Image.ANTIALIAS)
+    img.thumbnail((624, 800), Image.LANCZOS)
     img.save(full_name, progressive=True, quality=100)
